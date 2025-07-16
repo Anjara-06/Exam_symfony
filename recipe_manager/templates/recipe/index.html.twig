@@ -1,0 +1,27 @@
+{# templates/recipe/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Recettes{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Mes Recettes 🍲</h1>
+
+        <a href="{{ path('app_recipe_new') }}" class="btn">➕ Ajouter une recette</a>
+
+        {% if recipes is not empty %}
+            <ul class="recipe-list">
+                {% for recipe in recipes %}
+                    <li class="recipe-card">
+                        <h3>{{ recipe.title }}</h3>
+                        <p><strong>Ingrédients :</strong> {{ recipe.ingredients }}</p>
+                        <p><strong>Instructions :</strong> {{ recipe.instructions }}</p>
+                        <a href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">✏️ Modifier</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucune recette disponible.</p>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nouvelle Recette</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Ajouter une recette</h1>
+    <a href="index.html" class="btn">← Retour</a>
+  </header>
+
+  <main>
+    <form class="form-recipe">
+      <label for="title">Titre de la recette</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="category">Catégorie</label>
+      <select id="category" name="category" required>
+        <option value="">-- Choisir --</option>
+        <option>Entrée</option>
+        <option>Plat</option>
+        <option>Dessert</option>
+        <option>Végétarien</option>
+        <option>Express</option>
+      </select>
+
+      <label for="ingredients">Ingrédients</label>
+      <textarea id="ingredients" name="ingredients" rows="5" required></textarea>
+
+      <label for="instructions">Instructions</label>
+      <textarea id="instructions" name="instructions" rows="6" required></textarea>
+
+      <label for="popularity">Popularité (1 à 5)</label>
+      <input type="number" id="popularity" name="popularity" min="1" max="5">
+
+      <button type="submit" class="btn">Ajouter la recette</button>
+    </form>
+  </main>
+</body>
+</html>
